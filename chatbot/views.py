@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from .model import respon
 from .models import TextMessage
-from .models import SipintarResponse, SipintarResponseModel
+from .models import NLPIndonesiaResponse, NLPIndonesiaResponseModel
 
 
 def index(request):
@@ -15,8 +15,8 @@ def submit(request):
     user_message = request.POST['user_message']
     TextMessage.objects.create(message=user_message)
     bot_message = executebotscript(user_message)
-    SipintarResponse.objects.create(answer=bot_message[0],
-                                    response_model=SipintarResponseModel.objects.create(tag=bot_message[1],
+    NLPIndonesiaResponse.objects.create(answer=bot_message[0],
+                                    response_model=NLPIndonesiaResponseModel.objects.create(tag=bot_message[1],
                                     context_set=bot_message[2]))
     return render(request, 'index.html', {
         'bot_message': bot_message[0],

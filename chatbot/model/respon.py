@@ -1,5 +1,4 @@
 import os
-import sys
 from django.conf import settings
 import numpy as np
 import tflearn
@@ -9,8 +8,7 @@ import json
 import nltk
 from Sastrawi.Stemmer.StemmerFactory import StemmerFactory
 
-sys.path.append('/Users/detikcom/Documents/skripsi/')
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "siPintar.settings")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "NLP_Indonesia_Chatbot.settings")
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 
 factory = StemmerFactory()

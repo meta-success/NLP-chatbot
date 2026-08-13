@@ -1,7 +1,7 @@
 from django.db import models
 
 
-class SipintarResponseModel(models.Model):
+class NLPIndonesiaResponseModel(models.Model):
     tag = models.CharField(max_length=100)
     context_set = models.CharField(max_length=100)
 
@@ -13,6 +13,6 @@ class TextMessage(models.Model):
         return self.message[0:5]
 
 
-class SipintarResponse(models.Model):
+class NLPIndonesiaResponse(models.Model):
     answer = models.CharField(max_length=250)
-    response_model = models.ForeignKey(SipintarResponseModel, on_delete = models.CASCADE)
+    response_model = models.ForeignKey(NLPIndonesiaResponseModel, on_delete = models.CASCADE)

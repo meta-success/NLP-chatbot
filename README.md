@@ -56,7 +56,7 @@ NLP-Indonesia-Chatbot/
 │   └── urls.py
 ├── matabot/                   # separate OpenCV experiment (not the chatbot)
 ├── templates/                 # chat UI templates
-├── NLP-Indonesia-Chatbot/     # Django project settings
+├── NLP_Indonesia_Chatbot/     # Django project settings
 ├── manage.py
 └── requirements.txt
 ```
@@ -150,7 +150,7 @@ python respon.py
 If `respon.py` fails on import or path errors, update the hardcoded `sys.path.append(...)` near the top of `chatbot/model/respon.py` so it points to this project root on your machine, and keep:
 
 ```python
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "NLP-Indonesia-Chatbot.settings")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "NLP_Indonesia_Chatbot.settings")
 ```
 
 Then restart the Django server to use the new model in the UI.
