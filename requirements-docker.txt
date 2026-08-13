@@ -1,0 +1,11 @@
+Django==2.0.8
+nltk==3.3
+Sastrawi==1.0.1
+numpy==1.16.6
+tensorflow==1.15.5
+tflearn==0.3.2
+protobuf==3.20.3
+h5py==2.10.0
+Pillow==6.2.2
+pytz==2019.3
+scipy==1.4.1

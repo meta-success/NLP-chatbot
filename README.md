@@ -105,6 +105,58 @@ Open [http://127.0.0.1:8000/](http://127.0.0.1:8000/) and start chatting.
 
 ---
 
+## Run with Docker (recommended)
+
+Works on any machine without installing Python or TensorFlow locally.
+
+### Requirements
+
+- [Docker Desktop](https://www.docker.com/products/docker-desktop/) installed and running
+
+### Start the chatbot
+
+```bash
+cd NLP-Indonesia-Chatbot
+
+docker compose up --build
+```
+
+First run will **train the model** inside the container (may take several minutes).  
+When you see `Starting development server at http://0.0.0.0:8000/`, open:
+
+**http://127.0.0.1:8000/**
+
+### Useful commands
+
+```bash
+# Run in background
+docker compose up --build -d
+
+# View logs
+docker compose logs -f
+
+# Stop
+docker compose down
+```
+
+### Faster training (optional)
+
+Edit `docker-compose.yml` and lower `TRAIN_EPOCHS` (default `5000`):
+
+```yaml
+environment:
+  TRAIN_EPOCHS: "1000"
+```
+
+Then rebuild:
+
+```bash
+docker compose down
+docker compose up --build
+```
+
+---
+
 ## Train with your own data
 
 ### 1. Edit the knowledge base

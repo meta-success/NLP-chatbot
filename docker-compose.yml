@@ -1,0 +1,10 @@
+services:
+  web:
+    build: .
+    container_name: nlp-indonesia-chatbot
+    ports:
+      - "8000:8000"
+    environment:
+      ALLOWED_HOSTS: "*"
+      TRAIN_EPOCHS: "5000"
+    restart: unless-stopped

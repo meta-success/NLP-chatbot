@@ -1,3 +1,4 @@
+import os
 import nltk
 import pickle
 import numpy as np
@@ -91,7 +92,8 @@ output_h_reg = tflearn.regression(output_h)
 # Define model and setup tensorboard
 model = tflearn.DNN(output_h_reg, tensorboard_dir='tflearn_logs')
 # Start training (apply gradient descent algorithm)
-model.fit(train_x, train_y, n_epoch=5000, batch_size=10, show_metric=True)
+n_epoch = int(os.environ.get('TRAIN_EPOCHS', 5000))
+model.fit(train_x, train_y, n_epoch=n_epoch, batch_size=10, show_metric=True)
 model.save('model.tflearn')
 
 
