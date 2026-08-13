@@ -1,4 +1,4 @@
-# siPintar
+# NLP-Indonesia-Chatbot
 
 **Indonesian NLP chatbot** powered by a bag-of-words pipeline and a Multi-Layer Perceptron (MLP).  
 Built for Bahasa Indonesia business chats (example domain: car rental FAQs), with a Django web UI.
@@ -44,7 +44,7 @@ Optional **context** fields in the dataset let the bot handle short multi-turn f
 ## Project structure
 
 ```
-siPintar/
+NLP-Indonesia-Chatbot/
 ├── chatbot/
 │   ├── model/
 │   │   ├── pengetahuan.json   # intents, patterns, responses
@@ -56,7 +56,7 @@ siPintar/
 │   └── urls.py
 ├── matabot/                   # separate OpenCV experiment (not the chatbot)
 ├── templates/                 # chat UI templates
-├── siPintar/                  # Django project settings
+├── NLP-Indonesia-Chatbot/     # Django project settings
 ├── manage.py
 └── requirements.txt
 ```
@@ -65,9 +65,9 @@ siPintar/
 
 ## Screenshots
 
-![siPintar chat UI](ss1.png)
+![NLP-Indonesia-Chatbot chat UI](ss1.png)
 
-![siPintar chat example](ss2.png)
+![NLP-Indonesia-Chatbot chat example](ss2.png)
 
 ---
 
@@ -84,7 +84,7 @@ siPintar/
 
 ```bash
 git clone <your-repo-url>
-cd siPintar
+cd NLP-Indonesia-Chatbot
 
 python -m venv venv
 # Windows
@@ -150,7 +150,7 @@ python respon.py
 If `respon.py` fails on import or path errors, update the hardcoded `sys.path.append(...)` near the top of `chatbot/model/respon.py` so it points to this project root on your machine, and keep:
 
 ```python
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "siPintar.settings")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "NLP-Indonesia-Chatbot.settings")
 ```
 
 Then restart the Django server to use the new model in the UI.
@@ -169,10 +169,3 @@ The sample `pengetahuan.json` covers a small car-rental assistant, including:
 
 Replace or extend these tags to fit your own domain.
 
----
-
-## License
-
-MIT — see [LICENSE](LICENSE).
-
-Originally created by [Rino Alfian](https://github.com/kunci115).
